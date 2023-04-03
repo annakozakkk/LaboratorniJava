@@ -10,7 +10,7 @@ public class ElectricBicycle extends AbstractBicycle {
         this.energyConsumptionPer100meters=energyConsumptionPer100meters;
     }
 
-    private double capacityOfBattery;
+     private double capacityOfBattery;
 
     private  double energyConsumptionPer100meters;
     @Override
