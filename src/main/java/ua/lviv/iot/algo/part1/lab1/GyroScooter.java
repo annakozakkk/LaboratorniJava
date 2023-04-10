@@ -4,7 +4,12 @@ import lombok.ToString;
 @ToString (callSuper = true)
 public class GyroScooter extends AbstractBicycle {
     public GyroScooter() { }
-    public GyroScooter(String brand, double maxSpeed, double currentSpeed, double capacityOfBattery, double batteryVoltage, double energyConsumptionPer1km) {
+    public GyroScooter(final String brand,
+                       final double maxSpeed,
+                       final double currentSpeed,
+                       final double capacityOfBattery,
+                       final double batteryVoltage,
+                       final double energyConsumptionPer1km) {
         super(brand, maxSpeed, currentSpeed);
         this.batteryVoltage = batteryVoltage;
         this.capacityOfBattery = capacityOfBattery;
@@ -17,10 +22,7 @@ public class GyroScooter extends AbstractBicycle {
     private double energyConsumptionPer1km;
 
     @Override
-    public double getMaxDistance() {
+    public final double getMaxDistance() {
         return (capacityOfBattery * batteryVoltage) / energyConsumptionPer1km;
     }
 }
-
-
-

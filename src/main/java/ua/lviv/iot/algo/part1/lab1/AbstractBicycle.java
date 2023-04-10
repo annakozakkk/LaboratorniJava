@@ -11,11 +11,10 @@ import lombok.AllArgsConstructor;
 @NoArgsConstructor
 @ToString
 public abstract class AbstractBicycle {
-    protected String brand;
-    protected double maxSpeed;
-    protected double currentSpeed;
+   private  String brand;
+   private double maxSpeed;
+   private double currentSpeed;
     public abstract double getMaxDistance();
 
 
 }
-

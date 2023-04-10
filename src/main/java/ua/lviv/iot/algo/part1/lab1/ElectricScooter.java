@@ -6,7 +6,11 @@ import lombok.ToString;
 
 public class ElectricScooter extends AbstractBicycle {
 
-    public ElectricScooter(String brand, double maxSpeed, double currentSpeed, double timeToDriveOnOneBatteryCharge, double averageSpeed) {
+    public ElectricScooter(final String brand,
+                           final double maxSpeed,
+                           final double currentSpeed,
+                           final double timeToDriveOnOneBatteryCharge,
+                           final double averageSpeed) {
         super(brand, maxSpeed, currentSpeed);
         this.timeToDriveOnBatteryCharge = timeToDriveOnOneBatteryCharge;
         this.averageSpeed = averageSpeed;
@@ -15,7 +19,7 @@ public class ElectricScooter extends AbstractBicycle {
     private double timeToDriveOnBatteryCharge;
     private double averageSpeed;
     @Override
-    public double getMaxDistance() {
+    public final double getMaxDistance() {
         return timeToDriveOnBatteryCharge * averageSpeed;
     }
 }

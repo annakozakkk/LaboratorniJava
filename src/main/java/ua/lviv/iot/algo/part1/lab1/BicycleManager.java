@@ -15,21 +15,23 @@ import java.util.stream.Collectors;
 public class BicycleManager {
     private List<AbstractBicycle> bicycles = new ArrayList<>();
 
-    public void addBicycles(final AbstractBicycle bicycle) {
+    public final void addBicycles(final AbstractBicycle bicycle) {
         bicycles.add(bicycle);
     }
 
-    public List<AbstractBicycle> findTheBicyclesWithMaxSpeedMoreThan(final double maxSpeed) {
+    public final List<AbstractBicycle> findTheBicyclesWithMaxSpeedMoreThan(
+            final double maxSpeed) {
         return bicycles.stream()
-                .filter(bicycle -> bicycle.getMaxSpeed() > maxSpeed)
-                .collect(Collectors.toList());
+                        .filter(bicycle -> bicycle.getMaxSpeed() > maxSpeed)
+                        .collect(Collectors.toList());
 
     }
 
-    public List<AbstractBicycle> findTheBicyclesByBrand(final String brand) {
+    public final List<AbstractBicycle> findTheBicyclesByBrand(
+            final String brand) {
         return bicycles.stream()
-                .filter(bicycle -> Objects.equals(bicycle.getBrand(), brand))
-                .collect(Collectors.toList());
+                         .filter(bicycle -> Objects.equals(bicycle.getBrand(), brand))
+                         .collect(Collectors.toList());
 
     }
 

@@ -7,9 +7,7 @@ import org.junit.jupiter.api.Test;
 import java.util.List;
 
 public class BicycleManagerTest {
-
     private BicycleManager bicycleManager;
-
     @BeforeEach
     public void setUp() {
         bicycleManager = new BicycleManager();
@@ -42,7 +40,8 @@ public class BicycleManagerTest {
     public void testFindTheBicyclesByBrand() {
         List<AbstractBicycle> result = bicycleManager.findTheBicyclesByBrand("Colnago");
         Assertions.assertEquals(2, result.size());
-        Assertions.assertEquals("Colnago", result.get(0).getBrand());
-        Assertions.assertEquals("Colnago", result.get(1).getBrand());
+        for (var abstractBicycle : result) {
+            Assertions.assertEquals("Colnago", abstractBicycle.getBrand());
+        }
     }
 }

@@ -3,15 +3,15 @@ import lombok.ToString;
 @ToString (callSuper = true)
 
 public class Bicycle extends AbstractBicycle {
-    public Bicycle(String brand, double maxSpeed, double currentSpeed) {
+    public Bicycle(final String  brand, final double maxSpeed,
+                   final double currentSpeed) {
         super(brand, maxSpeed, currentSpeed);
     }
     @Override
-    public double getMaxDistance() {
+    public final double getMaxDistance() {
         return Integer.MAX_VALUE;
     }
 
 
 
 }
-
