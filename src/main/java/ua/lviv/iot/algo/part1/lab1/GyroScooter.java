@@ -1,9 +1,14 @@
 package ua.lviv.iot.algo.part1.lab1;
 
+import lombok.Getter;
 import lombok.ToString;
-@ToString (callSuper = true)
+
+@Getter
+@ToString(callSuper = true)
 public class GyroScooter extends AbstractBicycle {
-    public GyroScooter() { }
+    public GyroScooter() {
+    }
+
     public GyroScooter(final String brand,
                        final double maxSpeed,
                        final double currentSpeed,
@@ -16,13 +21,23 @@ public class GyroScooter extends AbstractBicycle {
         this.energyConsumptionPer1km = energyConsumptionPer1km;
     }
 
-
     private double capacityOfBattery;
     private double batteryVoltage;
     private double energyConsumptionPer1km;
 
+    public static final String HEADERS = "capacityOfBattery,batteryVoltage,energyConsumptionPer1km";
+
     @Override
     public final double getMaxDistance() {
         return (capacityOfBattery * batteryVoltage) / energyConsumptionPer1km;
+    }
+
+    public final String getHeaders() {
+        return super.getHeaders() + "," + HEADERS;
+    }
+
+    public final String toCSV() {
+        return super.toCSV() + "," + getCapacityOfBattery() + ","
+                + getBatteryVoltage() + "," + getEnergyConsumptionPer1km();
     }
 }

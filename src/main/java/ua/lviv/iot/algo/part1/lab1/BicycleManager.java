@@ -30,9 +30,11 @@ public class BicycleManager {
     public final List<AbstractBicycle> findTheBicyclesByBrand(
             final String brand) {
         return bicycles.stream()
-                         .filter(bicycle -> Objects.equals(bicycle.getBrand(), brand))
+                         .filter(bicycle -> Objects
+                                 .equals(bicycle.getBrand(), brand))
                          .collect(Collectors.toList());
 
     }
+
 
 }

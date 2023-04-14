@@ -9,6 +9,5 @@ public class BicycleTest {
     public void testGetMaxDistance(){
         var bicycle=new Bicycle("Colnago", 60, 45);
         assertEquals(2147483647,bicycle.getMaxDistance());
-        bicycle.toString();
     }
 }
