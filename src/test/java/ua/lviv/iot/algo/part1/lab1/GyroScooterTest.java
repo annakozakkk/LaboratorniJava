@@ -37,4 +37,14 @@ public class GyroScooterTest {
         double actualMaxDistance = gyroScooter.getMaxDistance();
         assertEquals(expectedMaxDistance, actualMaxDistance);
     }
+    @Test
+    public void testHeader(){
+        var gyroScooter = new GyroScooter("Smart Balance", 30, 10, 20, 36, 0.2);
+        assertEquals("brand,maxSpeed,currentSpeed,capacityOfBattery,batteryVoltage,energyConsumptionPer1km",gyroScooter.getHeaders());
+    }
+    @Test
+    public void testToCSV(){
+        var gyroScooter=new GyroScooter("Smart Balance", 30, 10, 20, 36, 0.2);
+        assertEquals("Smart Balance,30.0,10.0,20.0,36.0,0.2",gyroScooter.toCSV());
+    }
 }

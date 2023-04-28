@@ -1,17 +1,17 @@
 package ua.lviv.iot.algo.part1.lab1;
-import lombok.ToString;
+import lombok.*;
+@Setter
+@Getter
+@NoArgsConstructor
 @ToString (callSuper = true)
-
 public class Bicycle extends AbstractBicycle {
-    public Bicycle(final String  brand, final double maxSpeed,
-                   final double currentSpeed) {
+    public Bicycle(String brand, double maxSpeed, double currentSpeed) {
         super(brand, maxSpeed, currentSpeed);
     }
+
     @Override
-    public final double getMaxDistance() {
+    public double getMaxDistance() {
         return Integer.MAX_VALUE;
     }
-
-
-
 }
+
