@@ -1,6 +1,9 @@
 package ua.lviv.iot.algo.part1.lab1;
+
 import org.junit.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
+
 public class ElectricBicycleTest {
     @Test
     public void testMaxDistance() {
@@ -9,10 +12,15 @@ public class ElectricBicycleTest {
     }
 
     @Test
-    public void testDefaultConstructor() {
-        var electricBicycle = new ElectricBicycle();
-        double maxDistance = electricBicycle.getMaxDistance();
-        assertTrue(Double.isNaN(maxDistance));
+    public void testHeader() {
+        var electricBicycle = new ElectricBicycle("Colnago", 60, 40, 35, 0.2);
+        assertEquals("brand,maxSpeed,currentSpeed,capacityOfBattery,energyConsumptionPer100meters", electricBicycle.getHeaders());
+    }
+
+    @Test
+    public void testToCSV() {
+        var electricBicycle = new ElectricBicycle("Colnago", 60, 40, 35, 0.2);
+        assertEquals("Colnago,60.0,40.0,35.0,0.2", electricBicycle.toCSV());
     }
 
     @Test

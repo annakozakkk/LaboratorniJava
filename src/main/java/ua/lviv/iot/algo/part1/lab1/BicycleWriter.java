@@ -1,92 +1,30 @@
 package ua.lviv.iot.algo.part1.lab1;
 
+import java.io.*;
+import java.util.Collections;
 
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.util.Comparator;
 import java.util.List;
 
 public class BicycleWriter {
 
-    public String write(final List<AbstractBicycle> bicycles) {
-        if (bicycles == null || bicycles.isEmpty()) {
-            return null;
-        }
+    public void write(List<AbstractBicycle> bicycles) throws FileNotFoundException {
+
         String defaultFileName = "result.csv";
         try (PrintWriter printWriter = new PrintWriter(defaultFileName)) {
-            boolean bicycleHeaderWritten = false;
-            boolean electricBicycleHeaderWritten = false;
-            boolean gyroScooterHeaderWritten = false;
-            boolean electricScooterHeaderWritten = false;
-            for (AbstractBicycle ab : bicycles) {
-                if (ab instanceof Bicycle) {
-                    if (!bicycleHeaderWritten) {
-                        printWriter.println(ab.getHeaders());
-                        bicycleHeaderWritten = true;
-                    }
-                } else if (ab instanceof ElectricBicycle) {
-                    if (!electricBicycleHeaderWritten) {
-                        printWriter.println(ab.getHeaders());
-                        electricBicycleHeaderWritten = true;
-                    }
-                } else if (ab instanceof GyroScooter) {
-                    if (!gyroScooterHeaderWritten) {
-                        printWriter.println(ab.getHeaders());
-                        gyroScooterHeaderWritten = true;
-                    }
-                } else if (ab instanceof ElectricScooter) {
-                    if (!electricScooterHeaderWritten) {
-                        printWriter.println(ab.getHeaders());
-                        electricScooterHeaderWritten = true;
-                    }
+            Collections.sort(bicycles, Comparator.comparing(o -> o.getClass().getName()));
+            Class current = null;
+            for (AbstractBicycle bicycle : bicycles) {
+                if (bicycle.getClass() != current) {
+                    printWriter.println(bicycle.getHeaders());
+                    current = bicycle.getClass();
                 }
-                printWriter.println(ab.toCSV());
+                printWriter.println(bicycle.toCSV());
+
             }
         } catch (IOException e) {
         }
-        return defaultFileName;
+
     }
 }
-//
-//}
-//
-//
-//
-//
-//
-//        File csvFile = new File("result.csv");
-//        PrintWriter printWriter = new PrintWriter(csvFile);
-//
-//        boolean bicycleHeaderWritten = false;
-//        boolean electricBicycleHeaderWritten = false;
-//        boolean gyroScooterHeaderWritten = false;
-//        boolean electricScooterHeaderWritten = false;
-//
-//        for (AbstractBicycle ab : bicycles) {
-//            if (ab instanceof Bicycle) {
-//                if (!bicycleHeaderWritten) {
-//                    printWriter.println(ab.getHeaders());
-//                    bicycleHeaderWritten = true;
-//                }
-//            } else if (ab instanceof ElectricBicycle) {
-//                if (!electricBicycleHeaderWritten) {
-//                    printWriter.println(ab.getHeaders());
-//                    electricBicycleHeaderWritten = true;
-//                }
-//            } else if (ab instanceof GyroScooter) {
-//                if (!gyroScooterHeaderWritten) {
-//                    printWriter.println(ab.getHeaders());
-//                    gyroScooterHeaderWritten = true;
-//                }
-//            } else if (ab instanceof ElectricScooter) {
-//                if (!electricScooterHeaderWritten) {
-//                    printWriter.println(ab.getHeaders());
-//                    electricScooterHeaderWritten = true;
-//                }
-//            }
-//            printWriter.println(ab.toCSV());
-//
-//        }
-//        printWriter.close();
-//    }
-//}
 
