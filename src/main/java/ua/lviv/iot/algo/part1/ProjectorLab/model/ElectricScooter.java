@@ -1,4 +1,4 @@
-package ua.lviv.iot.algo.part1.ProjectorLab.model;
+package ua.lviv.iot.algo.part1.projectorLab.model;
 
 import lombok.Getter;
 import lombok.ToString;

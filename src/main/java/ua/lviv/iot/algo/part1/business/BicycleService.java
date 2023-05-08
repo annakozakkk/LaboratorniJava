@@ -38,4 +38,5 @@ public class BicycleService {
         bicycles.put(bicycleId, bicycle);
         return bicycle;
     }
+
 }

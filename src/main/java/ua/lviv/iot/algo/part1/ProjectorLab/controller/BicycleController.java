@@ -1,12 +1,12 @@
-package ua.lviv.iot.algo.part1.ProjectorLab.controller;
+package ua.lviv.iot.algo.part1.projectorLab.controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import ua.lviv.iot.algo.part1.ProjectorLab.model.Bicycle;
-import ua.lviv.iot.algo.part1.ProjectorLab.model.BicycleDTO;
+import ua.lviv.iot.algo.part1.projectorLab.model.Bicycle;
+import ua.lviv.iot.algo.part1.projectorLab.dto.BicycleDTO;
 import ua.lviv.iot.algo.part1.business.BicycleService;
 
 import java.util.ArrayList;
@@ -41,24 +41,24 @@ public class BicycleController {
     }
 
     @GetMapping(path = "/{id}")
-    public ResponseEntity<BicycleDTO> getBicycle(@PathVariable("id") Integer bicycleID) {
-        Bicycle bicycle = bicycleService.getBicycle(bicycleID);
+    public ResponseEntity<?> getBicycle(@PathVariable("id") Integer bicycleId) {
+        Bicycle bicycle = bicycleService.getBicycle(bicycleId);
         if (bicycle == null) {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
-        BicycleDTO bicycleDTO = format(bicycle);
-        return ResponseEntity.ok(bicycleDTO);
+        BicycleDTO bicycleDto = format(bicycle);
+        return ResponseEntity.ok(bicycleDto);
     }
 
     @PostMapping
     public BicycleDTO create(@RequestBody Bicycle bicycle) {
-        BicycleDTO bicycleDTO = format(bicycleService.createBicycle(bicycle));
-        return bicycleDTO;
+        BicycleDTO bicycleDto = format(bicycleService.createBicycle(bicycle));
+        return bicycleDto;
     }
 
     @DeleteMapping(path = "/{id}")
-    public ResponseEntity<BicycleDTO> deleteBicycle(@PathVariable("id") Integer bicycleID) {
-        if (bicycleService.deleteBicycle(bicycleID)) {
+    public ResponseEntity<BicycleDTO> deleteBicycle(@PathVariable("id") Integer bicycleId) {
+        if (bicycleService.deleteBicycle(bicycleId)) {
             return ResponseEntity.status(HttpStatus.OK).build();
         } else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
@@ -66,12 +66,12 @@ public class BicycleController {
     }
 
     @PutMapping(path = "/{id}")
-    public ResponseEntity<BicycleDTO> updateBicycle(@PathVariable("id") Integer bicycleID,
+    public ResponseEntity<BicycleDTO> updateBicycle(@PathVariable("id") Integer bicycleId,
                                                     @RequestBody Bicycle bicycle) {
-        Bicycle updatedBicycle = bicycleService.updateBicycle(bicycleID, bicycle);
+        Bicycle updatedBicycle = bicycleService.updateBicycle(bicycleId, bicycle);
         if (updatedBicycle != null) {
-            BicycleDTO bicycleDTO = format(bicycleService.updateBicycle(bicycleID, bicycle));
-            return ResponseEntity.ok(bicycleDTO);
+            BicycleDTO bicycleDto = format(bicycleService.updateBicycle(bicycleId, bicycle));
+            return ResponseEntity.ok(bicycleDto);
         } else {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
         }
