@@ -1,7 +1,7 @@
 package ua.lviv.iot.algo.part1.business;
 
 import org.springframework.stereotype.Service;
-import ua.lviv.iot.algo.part1.projectorLab.model.Bicycle;
+import ua.lviv.iot.algo.part1.projector.model.Bicycle;
 
 
 import java.util.HashMap;

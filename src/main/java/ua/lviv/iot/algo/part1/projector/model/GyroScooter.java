@@ -1,5 +1,4 @@
-package ua.lviv.iot.algo.part1.projectorLab.model;
-import lombok.AllArgsConstructor;
+package ua.lviv.iot.algo.part1.projector.model;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
@@ -7,7 +6,7 @@ import lombok.ToString;
 @ToString (callSuper = true)
 @NoArgsConstructor
 public class GyroScooter extends AbstractBicycle {
-    
+
     public GyroScooter(final String brand,
                        final double maxSpeed,
                        final double currentSpeed,
