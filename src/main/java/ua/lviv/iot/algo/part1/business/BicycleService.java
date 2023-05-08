@@ -1,8 +1,8 @@
 package ua.lviv.iot.algo.part1.business;
 
 import org.springframework.stereotype.Service;
-import ua.lviv.iot.algo.part1.ProjectorLab.model.Bicycle;
-import ua.lviv.iot.algo.part1.ProjectorLab.model.BicycleDTO;
+import ua.lviv.iot.algo.part1.projectorLab.model.Bicycle;
+
 
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -21,21 +21,21 @@ public class BicycleService {
         return bicycle;
     }
 
-    public Bicycle getBicycle(Integer bicycleID) {
-        return bicycles.get(bicycleID);
+    public Bicycle getBicycle(Integer bicycleId) {
+        return bicycles.get(bicycleId);
     }
 
     public List<Bicycle> getAllBicycles() {
         return new LinkedList<Bicycle>(bicycles.values());
     }
 
-    public boolean deleteBicycle(Integer bicycleID) {
-        return bicycles.remove(bicycleID) != null;
+    public boolean deleteBicycle(Integer bicycleId) {
+        return bicycles.remove(bicycleId) != null;
     }
 
-    public Bicycle updateBicycle(Integer bicycleID, Bicycle bicycle) {
-        bicycle.setId(bicycleID);
-        bicycles.put(bicycleID, bicycle);
+    public Bicycle updateBicycle(Integer bicycleId, Bicycle bicycle) {
+        bicycle.setId(bicycleId);
+        bicycles.put(bicycleId, bicycle);
         return bicycle;
     }
 }
