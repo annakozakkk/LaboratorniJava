@@ -1,4 +1,6 @@
-package ua.lviv.iot.algo.part1.lab1;
+package ua.lviv.iot.algo.part1.projector.writer;
+
+import ua.lviv.iot.algo.part1.projector.model.AbstractBicycle;
 
 import java.io.*;
 import java.util.Collections;

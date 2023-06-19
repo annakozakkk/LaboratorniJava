@@ -1,9 +1,10 @@
-package ua.lviv.iot.algo.part1.lab1;
+package ua.lviv.iot.algo.part1.ProjectorLab;
 
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
+import ua.lviv.iot.algo.part1.ProjectorLab.model.*;
 
 import java.io.*;
 import java.nio.file.Files;

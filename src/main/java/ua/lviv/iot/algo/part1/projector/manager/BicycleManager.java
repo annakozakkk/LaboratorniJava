@@ -1,8 +1,10 @@
-package ua.lviv.iot.algo.part1.lab1;
+package ua.lviv.iot.algo.part1.projector.manager;
 
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.Getter;
+import ua.lviv.iot.algo.part1.projector.model.AbstractBicycle;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
