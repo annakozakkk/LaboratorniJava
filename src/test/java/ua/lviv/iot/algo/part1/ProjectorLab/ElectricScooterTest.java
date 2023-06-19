@@ -2,7 +2,7 @@ package ua.lviv.iot.algo.part1.ProjectorLab;
 
 import lombok.Builder;
 import org.junit.Test;
-import ua.lviv.iot.algo.part1.ProjectorLab.model.ElectricScooter;
+import ua.lviv.iot.algo.part1.projector.model.ElectricScooter;
 
 import static org.junit.jupiter.api.Assertions.*;
 

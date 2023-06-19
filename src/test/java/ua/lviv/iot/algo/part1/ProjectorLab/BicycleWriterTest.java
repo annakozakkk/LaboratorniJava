@@ -4,7 +4,8 @@ package ua.lviv.iot.algo.part1.ProjectorLab;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
-import ua.lviv.iot.algo.part1.ProjectorLab.model.*;
+import ua.lviv.iot.algo.part1.projector.model.*;
+import ua.lviv.iot.algo.part1.projector.writer.BicycleWriter;
 
 import java.io.*;
 import java.nio.file.Files;

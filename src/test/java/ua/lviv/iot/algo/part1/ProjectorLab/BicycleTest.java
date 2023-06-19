@@ -1,7 +1,7 @@
 package ua.lviv.iot.algo.part1.ProjectorLab;
 
 import org.junit.Test;
-import ua.lviv.iot.algo.part1.ProjectorLab.model.Bicycle;
+import ua.lviv.iot.algo.part1.projector.model.Bicycle;
 
 import static org.junit.jupiter.api.Assertions.*;
 

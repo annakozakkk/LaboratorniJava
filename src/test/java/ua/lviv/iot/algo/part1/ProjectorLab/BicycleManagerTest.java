@@ -3,7 +3,8 @@ package ua.lviv.iot.algo.part1.ProjectorLab;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import ua.lviv.iot.algo.part1.ProjectorLab.model.*;
+import ua.lviv.iot.algo.part1.projector.model.*;
+import ua.lviv.iot.algo.part1.projector.manager.BicycleManager;
 
 
 import java.util.List;
